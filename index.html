@@ -1,0 +1,60 @@
+
+<!doctype html> 
+<html lang="'en-US">
+  <head>
+    <meta charset="utf-8" />
+    <link href="styles\style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width"/>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet" />
+    <title>My test page</title>
+    
+  </head>
+
+  <body>
+    <h1>元素概论</h1>
+  <img src="myimage\1.png" alt="标签概述" />
+    <p>上图展示了对应的标签</p>
+    <p><strong>他们分别是</strong></p>
+    <u1>
+      <li>文档类型:!DOCTYPE html</li>
+      <li>根元素： html</li>
+      <li>非可视化：head元素</li>
+      <li>设置页面标题：title</li>
+      <li>可视化:body元素</li>
+      <a href="https://xzb666-hub.github.io/">My blog</a>
+    </u1>
+    <button>切换用户</button>
+    <script>
+      
+
+      let myButton = document.querySelector("button");
+  let myHeading = document.querySelector("h1");
+
+    
+    function setUserName() {
+      let myName = prompt("公主请自我介绍")
+      if(!myName){
+        setUserName()
+      }
+      else{
+      localStorage.setItem("name", myName);
+      myHeading.textContent = "欢迎"+ myName +"公主";
+      }
+    }
+
+  if(!localStorage.getItem("name")){
+      setUserName();
+  }else{
+  let storedName = localStorage.getItem("name");
+  myHeading .textContent ="欢迎"+storedName+"公主！" ;
+}
+myButton.onclick = function(){
+  setUserName();
+}
+  
+  </script>
+</body>
+
+</html>
